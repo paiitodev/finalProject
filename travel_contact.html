@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav>
+    <h1 style="font-family:verdana;"><span class="material-symbols-outlined">flight_takeoff</span>TravelExplore</h1>
+    <ul>
+      <li><a href="./index.html" id="home">Home </a></li>
+      <li><a href="./travel_about.html" id="about">About Us </a></li>
+      <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
+    </ul>
+  </nav>
+
+  <div id="contenedor">
+    <div id="principal">
+      <p>Contact Us</p>
+    </div>
+    <div id="sidebar">
+      <form id="contactForm">
+        <div>
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <button type="submit" onclick="thankyou()">Submit</button>
+      </form>
+      <script>
+        function thankyou() {
+          alert('Thank you for contacting us!')
+        }
+      </script>
+
+    </div>
+  </div>
+</body>
+
+</html>

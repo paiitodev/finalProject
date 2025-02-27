@@ -1,0 +1,126 @@
+/* Basic CSS for the navigation bar */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #fa903f;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  /* padding: 0; */
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav a {
+  text-decoration: none; /*quitar los subrayados de los links*/
+  color: #333;
+  font-size: 700;
+  font-weight: bold;
+}
+
+nav a:hover{
+  color: #ffffff
+}
+
+
+/* Basic CSS for the form elements */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/img/background.jpg");
+  background-size: 100% auto;
+  /* margin: 20px; */
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 200px;
+  padding: 5px;
+}
+
+button {
+  padding: 7px 15px;
+  background-color: #dd5d18;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 500px 500px ;
+
+}
+
+.container > div {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(207, 232, 220);
+  border: 2px solid rgb(79, 185, 227);
+}
+
+#principal {
+  width: 20%;
+}
+#sidebar {
+  width: 80%;
+}
+
+#intro {
+  font-size: 80px;
+  align-content: center;
+}
+/* Basic CSS for the report section */
+h2 {
+  margin-top: 30px;
+}
+
+#report,#result {
+  padding: 10px;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+#result{
+height: 400px;
+width: 500px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-direction: column;
+}
+#result img{
+  width: 200px;
+  height: 100px;
+}
+
