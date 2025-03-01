@@ -2,70 +2,77 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="./styles_about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us- TravelExplore </title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
-    <nav>
-        <h1 style="font-family:verdana;"><span class="material-symbols-outlined">flight_takeoff</span>TravelExplore</h1>
-        <ul>
-            <li><a href="./index.html" id="home">Home </a></li>
-            <li><a href="./travel_about.html" id="about">About Us </a></li>
-            <li><a href="./travel_contact.html" id="contact">Contact Us </a></li>
-        </ul>
-    </nav>
-
-    <!-- Cabecera -->
-    <header class="about-header">
-        <h1>ABOUT US</h1>
-    </header>
-
-     <!-- Contenido principal -->
-  <main class="about-content">
-    <section>
-      <h2>Welcome to Our Company!</h2>
-      <p>
-        We are a team of passionate individuals dedicated to providing excellent services and products to our customers. Our mission is to provide the best experience for people traveling to different destinations around the world.
-      </p>
-    </section>
-
-    <section>
-      <h2>Our Values</h2>
-      <ul>
-        <li>Integrity</li>
-        <li>Innovation</li>
-        <li>Customer Satisfaction</li>
-        <li>Teamwork</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Our Team</h2>
-      <div class="team-members">
-        <div class="team-member">
-          <img src="img/pers1.webp" alt="Team Member 1">
-          <h3>John Doe</h3>
-          <p>CEO & Founder</p>
+  <div class="main">
+    <div class="body-content">
+      <nav class="navbar">
+        <div class="navbar-left">
+          <h1 style="font-family:verdana;"><span class="material-symbols-outlined">flight_takeoff</span>TravelExplore
+          </h1>
         </div>
-        <div class="team-member">
-          <img src="/img/pers2.jpg" alt="Team Member 2">
-          <h3>John Smith</h3>
-          <p>Travel Specialist</p>
+        <div class="navbar-center">
+          <a href="./index.html" id="home">Home </a>
+          <a href="./travel_about.html" id="about">About Us </a>
+          <a href="./travel_contact.html" id="contact">Contact Us </a>
         </div>
-        <div class="team-member">
-          <img src="/img/pers3.jpg" alt="Team Member 3">
-          <h3>James Brown</h3>
-          <p>Customer Support</p>
+      </nav>
+      <div id="about-container">
+        <div class="fixed-sidebar-left">
+          <ul class="social-icons">
+            <li>
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
         </div>
+        <section id="contact-section">
+          <div class="left-content">
+            <h1>About Us</h1>
+          </div>
+          <div class="right-content">
+            <h2>Our Team</h2>
+            <div class="team-members">
+              <div class="team-member">
+                <img src="img/pers1.webp" alt="Team Member 1">
+                <h3>Emily Walt</h3>
+                <p>CEO & Founder</p>
+              </div>
+              <div class="team-member">
+                <img src="/img/pers2.jpg" alt="Team Member 2">
+                <h3>John Smith</h3>
+                <p>Travel Specialist</p>
+              </div>
+              <div class="team-member">
+                <img src="/img/pers3.jpg" alt="Team Member 3">
+                <h3>James Brown</h3>
+                <p>Customer Support</p>
+              </div>
+            </div>
+            <p>
+              We are a team of passionate individuals dedicated to providing excellent services and products to our
+              customers.
+              Our mission is to provide the best experience for people traveling to different destinations around the
+              world.
+            </p>
+          </div>
+        </section>
       </div>
-    </section>
-  </main>
-
-  <!-- Pie de página -->
+      <!-- Pie de página -->
+    </div>
+  </div>
   <footer>
     <p>&copy; 2025 TravelExplore. Todos los derechos reservados.</p>
   </footer>

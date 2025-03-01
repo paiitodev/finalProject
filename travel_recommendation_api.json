@@ -38,7 +38,7 @@
         "cities": [
           {
             "name": "Rio de Janeiro, Brazil",
-            "imageUrl": "/img/rio.jpg",
+            "imageUrl": "/img/rio.jpeg",
             "description": "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."
           },
           {
@@ -59,7 +59,7 @@
       {
         "id": 2,
         "name": "Taj Mahal, India",
-        "imageUrl": "/img/taj.jpg",
+        "imageUrl": "/img/taj.jpeg",
         "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
       }
     ],

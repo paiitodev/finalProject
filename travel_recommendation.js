@@ -1,91 +1,81 @@
 const btnSearch = document.getElementById("btnSearch");
 const btnClear = document.getElementById("btnClear");
 
-async function loadData() {
-  try {
-    const response = await fetch("travel_recommendation_api.json"); // Ruta al archivo JSON
-    if (!response.ok) {
-      throw new Error("No se pudo cargar el archivo JSON");
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error al cargar los datos:", error);
-  }
-}
+function searchDestination() {
+    const input = document.getElementById("destinationInput").value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
 
-// Función para manejar la búsqueda
-async function handleSearch() {
-  // Obtener la entrada del usuario
-  const userInput = document.getElementById("destinationInput").value.toLowerCase();
+    fetch('travel_recommendation_api.json')
+        .then(response => response.json())
+        .then(data => {
 
-  // Limpiar resultados anteriores
-  const resultsContainer = document.getElementById("results");
-  resultsContainer.innerHTML = "";
+            if (input !== '') {
+                if (input.includes('beach')) {
+                    const beaches = data.beaches;
+                    beaches.forEach(beach => {
+                        resultDiv.innerHTML += `
+                        <div class="result-item">
+                        <div class="image-section"> 
+                        <img src="${beach.imageUrl}" alt="${beach.name}">
+                        </div><div class="text-section">
+                        <h2>${beach.name}</h2>
+                        <p>${beach.description}</p>
+                        </div>
+                        </div>`;
+                    });
+                }
 
-  // Cargar los datos JSON
-  const data = await loadData();
-  if (!data) {
-    resultsContainer.innerHTML = "<p>Error al cargar los datos.</p>";
-    return;
-  }
+                if (input.includes('temple')) {
+                    const temples = data.temples;
+                    temples.forEach(temple => {
+                        resultDiv.innerHTML += `
+                        <div class="result-item">
+                        <div class="image-section"> 
+                        <img src="${temple.imageUrl}" alt="${temple.name}">
+                        </div><div class="text-section">
+                        <h2>${temple.name}</h2>
+                        <p>${temple.description}</p>
+                        </div>
+                        </div>`;
+                    });
+                }
 
-  // Determinar la categoría basada en la entrada del usuario
-  let category;
-  if (userInput === "beach" || userInput === "beaches") {
-    category = "beaches";
-  } else if (userInput === "temple" || userInput === "temples") {
-    category = "temples";
-  } else if (userInput === "country" || userInput === "countries") {
-    category = "countries";
-  } else {
-    resultsContainer.innerHTML = "<p>No se encontraron resultados.</p>";
-    return;
-  }
+                if (input.includes('country') || input.includes('countries')) {
+                    const countries = data.countries;
+                    countries.forEach(country => {
+                        country.cities.forEach(city => {
+                            resultDiv.innerHTML += `
+                            <div class="result-item">
+                            <div class="image-section"> 
+                            <img src="${city.imageUrl}" alt="${city.name}">
+                            </div><div class="text-section">
+                            <h2>${city.name}</h2>
+                            <p>${city.description}</p>
+                            </div>
+                            </div>`;
+                        });
+                    });
+                }
+            }
 
-  // Obtener las recomendaciones de la categoría seleccionada
-  const recommendations = data[category];
-
-  // Mostrar las recomendaciones
-  if (recommendations && recommendations.length > 0) {
-    recommendations.forEach((item) => {
-      let itemHTML;
-      if (category === "countries") {
-        // Mostrar ciudades para países
-        item.cities.forEach((city) => {
-          itemHTML = `
-            <div class="searchDestination">
-              <img src="${city.imageUrl}" alt="${city.name}">
-              <h3>${city.name}</h3>
-              <p>${city.description}</p>
-            </div>
-          `;
-          resultsContainer.innerHTML += itemHTML;
+        })
+        .catch(error => {
+            console.log('Error:', error);
+            resultDiv.innerHTML = 'An error occurred while fetching data.';
         });
-      } else {
-        // Mostrar templos o playas
-        itemHTML = `
-          <div class="recommendation">
-            <img src="${item.imageUrl}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-          </div>
-        `;
-        resultsContainer.innerHTML += itemHTML;
-      }
-    });
-  } else {
-    resultsContainer.innerHTML = "<p>No se encontraron resultados.</p>";
-  }
 }
 
-// Función para limpiar los resultados
-function clearResults() {
-  const resultsContainer = document.getElementById("results");
-  resultsContainer.innerHTML = ""; // Borra el contenido del contenedor
+btnSearch.addEventListener('click', searchDestination);
+
+function resetSearch() {
+    document.getElementById("destinationInput").value = "";
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
 }
 
-// Asignar funciones a los botones
+document.getElementById('btnContact').addEventListener('click', function() {
+    window.location.href = './travel_contact.html';
+  });
 
-btnSearch.addEventListener("click", handleSearch);
-btnClear.addEventListener("click", clearResults);
+btnClear.addEventListener("click", resetSearch);
