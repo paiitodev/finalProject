@@ -28,6 +28,9 @@ Es el proyecto final del curso JavaScript Programming Essentials by IBM de [Cour
 - Usa el botón Clear para limpiar la barra de búsqueda 
 - Completa el formulario de contacto para enviar un mensaje.
 
+## Despliegue 
+La página está desplegada en GitHub Pages [aquí](https://paiitodev.github.io/finalProject/)
+
 ## Instalación
 1. Clona el repositorio:
    ```bash
